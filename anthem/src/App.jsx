@@ -1,33 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect, useRef } from 'react'
+import Home from './Home';
+import Landing from './Landing';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [hasEntered, setHasEntered] = useState(false); 
+  const bgMusicRef = useRef(null);
+
+  const enterSite = () => {
+    window.removeEventListener('click', enterSite);
+    setHasEntered(true);
+    playMusic();
+  };  
+
+  const playMusic = () => {
+    const audio = bgMusicRef.current;
+    audio.play();
+  };
+
+  useEffect(() => {
+    window.addEventListener('click', enterSite);
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <audio ref={bgMusicRef} preload="auto">
+        <source src="/empire-state-of-mind.mp3" type="audio/mpeg"/>
+        Your browser does not support the audio element.
+      </audio>
+      {hasEntered ? <Home /> : <Landing />}
     </>
   )
 }

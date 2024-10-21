@@ -1,0 +1,14 @@
+#dvd-logo {
+    position: absolute;
+    font-size: 3rem;
+    background-color: purple;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    user-select: none;
+    white-space: nowrap; 
+}
+
+.responsive-el {
+    transition: all 0.3s ease;
+}
