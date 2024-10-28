@@ -1,46 +1,62 @@
 import { useEffect, useRef } from "react";
+import TvBorder from "./TvBorder";
 
 function Landing() {
     const dvdLogoRef = useRef(null);
     const bgMusicRef = useRef(null);
+    const BORDER_WIDTH = 60;
+    const DEFAULT_SPEEDX = 0.35;
+    const DEFAULT_SPEEDY = 0.35;
 
-    let speedX = 1;
-    let speedY = 1;
+    let speedX = DEFAULT_SPEEDX;
+    let speedY = DEFAULT_SPEEDY;
     let posX = window.innerWidth * 0.5;
     let posY = window.innerHeight * 0.5;
 
     const handleResize = () => {
         const dvdLogo = dvdLogoRef.current;
 
-        posX = Math.min(posX, window.innerWidth - dvdLogo.offsetWidth);
-        posY = Math.min(posY, window.innerHeight - dvdLogo.offsetHeight);
+        if (dvdLogo) {
+            posX = window.innerWidth * 0.5;
+            posY = window.innerHeight * 0.5;
+            speedX = DEFAULT_SPEEDX;
+            speedY = DEFAULT_SPEEDY;
+        }
     };
 
-    const playMusic = () => {
-        const audio = bgMusicRef.current;
-        audio.play();
-        window.removeEventListener('click', playMusic);
+    const checkStraightBorder = () => {
+        const dvdLogo = dvdLogoRef.current;
+
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        if (posX <= BORDER_WIDTH) {
+            speedX = -speedX;
+        } else if (posX + dvdLogo.offsetWidth >= width - BORDER_WIDTH) {
+            speedX = -speedX;
+        }
+
+        if (posY <= BORDER_WIDTH) {
+            speedY = -speedY;
+        } else if (posY + dvdLogo.offsetHeight >= height - BORDER_WIDTH) {
+            speedY = -speedY;
+        }
+    };
+
+    const updatePosition = () => {
+        const dvdLogo = dvdLogoRef.current;
+        if (!dvdLogo) return;
+
+        posX += speedX;
+        posY += speedY;
+
+        checkStraightBorder();
+
+        dvdLogo.style.left = `${posX}px`;
+        dvdLogo.style.top = `${posY}px`;
     };
 
     useEffect(() => {
-        const dvdLogo = dvdLogoRef.current;
-
-        function updatePosition() {
-            posX += speedX;
-            posY += speedY;
-    
-            if (posX <= 0 || posX + dvdLogo.offsetWidth >= window.innerWidth) {
-                speedX = -speedX;
-            }
-    
-            if (posY <= 0 || posY + dvdLogo.offsetHeight >= window.innerHeight) {
-                speedY = -speedY;
-            }
-    
-            dvdLogo.style.left = `${posX}px`;
-            dvdLogo.style.top = `${posY}px`;
-        }
-
         function animate() {
             updatePosition();
             requestAnimationFrame(animate);
@@ -48,7 +64,6 @@ function Landing() {
 
         animate();
 
-        window.addEventListener('click', playMusic);
         window.addEventListener('resize', handleResize);
 
         return () => {
@@ -57,13 +72,11 @@ function Landing() {
     }, []);
 
     return (
-        <div id="dvd-logo" ref={dvdLogoRef}>
-                DVD
-            <audio ref={bgMusicRef} preload="auto">
-                <source src="/empire-state-of-mind.mp3" type="audio/mpeg"/>
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+        <>
+            <TvBorder>
+                <div id="dvd-logo" ref={dvdLogoRef}>Oliva Wendel</div>
+            </TvBorder>
+        </>
     )
 }
 

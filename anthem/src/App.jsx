@@ -14,7 +14,9 @@ function App() {
 
   const playMusic = () => {
     const audio = bgMusicRef.current;
-    audio.play();
+    if (audio) {
+      //audio.play();
+    }
   };
 
   useEffect(() => {

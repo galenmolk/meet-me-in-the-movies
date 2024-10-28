@@ -1,14 +1,49 @@
-#dvd-logo {
-    position: absolute;
-    font-size: 3rem;
-    background-color: purple;
-    padding: 10px;
-    color: white;
-    border-radius: 10px;
-    user-select: none;
-    white-space: nowrap; 
+:root {
+    --tv-border: #1A1A1A;
+    --tv-screen: #efefef;
+    --brown: #35312F;
+    --tbrown: #35312f81;
 }
 
-.responsive-el {
-    transition: all 0.3s ease;
+* {
+    cursor: url('/cursor.png') 8 16, auto;
+}
+
+#dvd-logo {
+    position: absolute;
+    font-size: 2rem;
+    background-color: #EAC3B7;
+    padding: 5px 30px 5px 30px;
+    color: var(--brown);
+    border-radius: 65px;
+    user-select: none;
+    white-space: nowrap;
+    box-shadow: 2px 3px 7px var(--tbrown);
+    border: 1px solid var(--brown);
+    font-style: italic;
+}
+
+.border-edge {
+    background-color: var(--tv-border);
+    height: 100vh;
+  }
+
+.inner-border {
+    height: 100%;
+    border: 60px solid var(--tv-border);
+}
+
+.content {
+    top: 0;
+    left: 0;
+    background-color: var(--tv-screen);
+    height: 100%;
+    border-radius: 65px;
+    padding: 70px;
+}
+
+.menu-button {
+    background-color: black;
+    width: 200px;
+    height: 100px;
 }
