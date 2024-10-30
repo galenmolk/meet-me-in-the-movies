@@ -10,7 +10,7 @@ function Home() {
             <div className="container-fluid hero-container" onClick={() => {console.log('h')}}>
                     <div className="row">
                         <div className="justify-content-center">
-                            <h1 className="text-center title">OLIVIA WENDEL</h1>
+                            <h1 className="text-center">OLIVIA WENDEL</h1>
                         </div>                    
                     </div>
                     <div className="row">
