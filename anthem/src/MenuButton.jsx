@@ -11,7 +11,7 @@ function MenuButton({button}) {
 
             <div onClick={handleClick} className="menu-button">
                 <div className="menu-button-bg">
-                    <img src='/mall-cop.png' alt="Mall Cop"></img>
+                    <img src='./mall-cop.png' alt="Mall Cop"></img>
                 </div>
                 <p>{button.title}</p>
             </div>
