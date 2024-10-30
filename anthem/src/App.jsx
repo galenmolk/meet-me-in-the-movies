@@ -8,9 +8,14 @@ function App() {
 
   const enterSite = () => {
     window.removeEventListener('click', enterSite);
+    window.addEventListener('click', (e) => {
+      console.log(e.target);
+    })
     setHasEntered(true);
     playMusic();
   };  
+
+
 
   const playMusic = () => {
     const audio = bgMusicRef.current;

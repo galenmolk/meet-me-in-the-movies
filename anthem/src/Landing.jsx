@@ -3,15 +3,14 @@ import TvBorder from "./TvBorder";
 
 function Landing() {
     const dvdLogoRef = useRef(null);
-    const bgMusicRef = useRef(null);
     const BORDER_WIDTH = 60;
     const DEFAULT_SPEEDX = 0.35;
     const DEFAULT_SPEEDY = 0.35;
 
     let speedX = DEFAULT_SPEEDX;
     let speedY = DEFAULT_SPEEDY;
-    let posX = window.innerWidth * 0.5;
-    let posY = window.innerHeight * 0.5;
+    let posX = 0;
+    let posY = 0;
 
     const handleResize = () => {
         const dvdLogo = dvdLogoRef.current;
@@ -57,6 +56,9 @@ function Landing() {
     };
 
     useEffect(() => {
+        posX = window.innerWidth * 0.5 - (dvdLogoRef.current.offsetWidth * 0.5);
+        posY = window.innerHeight * 0.5 - (dvdLogoRef.current.offsetHeight * 0.5);
+
         function animate() {
             updatePosition();
             requestAnimationFrame(animate);
@@ -73,9 +75,8 @@ function Landing() {
 
     return (
         <>
-            <TvBorder>
-                <div id="dvd-logo" ref={dvdLogoRef}>Oliva Wendel</div>
-            </TvBorder>
+            <TvBorder/>
+            <div id="dvd-logo" ref={dvdLogoRef}>Oliva Wendel</div>
         </>
     )
 }

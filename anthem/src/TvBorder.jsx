@@ -1,13 +1,8 @@
-function TvBorder({children}) {
+function TvBorder() {
     return (
         <> 
-            <div className="border-edge">
-                <div className="inner-border">
-                    <div className="content">
-                        {children}
-                    </div>
-                </div>
-            </div>
+            <div className="border-overlay"></div>
+            <div className="border-corners"></div>
         </>
     )
 }

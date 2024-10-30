@@ -3,17 +3,22 @@
     --tv-screen: #efefef;
     --brown: #35312F;
     --tbrown: #35312f81;
+    --green: #C0D1B0;
+    --pink: #E8BDA3;
 }
 
 * {
-    cursor: url('/cursor.png') 8 16, auto;
+ /*cursor: url('/cursor.png') 8 16, auto;*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 #dvd-logo {
     position: absolute;
     font-size: 2rem;
     background-color: #EAC3B7;
-    padding: 5px 30px 5px 30px;
+    padding: .1rem 2rem .1rem 2rem;
     color: var(--brown);
     border-radius: 65px;
     user-select: none;
@@ -23,27 +28,70 @@
     font-style: italic;
 }
 
-.border-edge {
-    background-color: var(--tv-border);
-    height: 100vh;
-  }
-
-.inner-border {
-    height: 100%;
-    border: 60px solid var(--tv-border);
+.hero-container {
+    margin-top: 60px;
+    color: var(--tv-border);
 }
 
-.content {
-    top: 0;
-    left: 0;
-    background-color: var(--tv-screen);
-    height: 100%;
-    border-radius: 65px;
-    padding: 70px;
+.title {
+    margin-top: 2rem;
+}
+
+.menu {
+    margin-top: 2rem;
 }
 
 .menu-button {
-    background-color: black;
-    width: 200px;
-    height: 100px;
+    display: block;
+    background-color: clear;
+    width: 300px;
+    height: 209px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.menu-button-bg {
+    background-color: clear;
+    width: 100%;
+    height: 80%;
+    border: 5px solid #C0D1B0;
+    border-radius: 10px;
+}
+
+.menu-button p {
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    top: 5%;
+    color: var(--tv-border);
+}
+
+.menu-button img {
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.border-overlay {
+    position: fixed;
+    top: -3%;
+    left: -3%;
+    right: -3%;
+    bottom: -3%;
+    border: 100px solid #333;
+    border-radius: 200px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.border-corners {
+    position: fixed;
+    border: 38px solid #333;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
 }

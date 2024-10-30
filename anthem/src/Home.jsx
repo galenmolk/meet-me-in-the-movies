@@ -1,33 +1,35 @@
 import TvBorder from "./TvBorder";
+import buttons from "./Buttons";
+import MenuButton from "./MenuButton";
 
 function Home() {
     return (
         <> 
-            <TvBorder>
-                <div className="container-fluid">
+            <TvBorder/>
+
+            <div className="container-fluid hero-container" onClick={() => {console.log('h')}}>
                     <div className="row">
                         <div className="justify-content-center">
-                            <h1 className="text-center">OLIVIA WENDEL</h1>
+                            <h1 className="text-center title">OLIVIA WENDEL</h1>
                         </div>                    
                     </div>
                     <div className="row">
-                        <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
-                            <h2 className="text-center text-md-left">Meet Me At The Movies</h2>
+                        <div className="col-12 justify-content-center">
+                            <h2 className="text-center">Meet Me In The Movies</h2>
                         </div>
-                        <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
-                            <h2 className="text-center text-md-right">Out - January 31st 2025</h2>
+                        <div className="col-12 justify-content-center">
+                            <h2 className="text-center">Out - January 31st 2025</h2>
                         </div>
                     </div>
                 </div>
 
-                <div className="container-fluid">
+                <div className="container menu">
                     <div className="row">
-                        <div className="menu-button"></div>
-                        <div className="menu-button"></div>
-                        <div className="menu-button"></div>
+                        {buttons.map((b, index) => {
+                            return <MenuButton button={b} key={index}/>
+                        })}
                     </div>
                 </div>
-            </TvBorder>
         </>
     )
 }
