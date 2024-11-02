@@ -8,19 +8,14 @@ function App() {
 
   const enterSite = () => {
     window.removeEventListener('click', enterSite);
-    window.addEventListener('click', (e) => {
-      console.log(e.target);
-    })
     setHasEntered(true);
     playMusic();
   };  
 
-
-
   const playMusic = () => {
     const audio = bgMusicRef.current;
     if (audio) {
-      //audio.play();
+      audio.play();
     }
   };
 
@@ -31,7 +26,7 @@ function App() {
   return (
     <>
       <audio ref={bgMusicRef} preload="auto">
-        <source src="/empire-state-of-mind.mp3" type="audio/mpeg"/>
+        <source src="./empire-state-of-mind.mp3" type="audio/mpeg"/>
         Your browser does not support the audio element.
       </audio>
       {hasEntered ? <Home /> : <Landing />}
