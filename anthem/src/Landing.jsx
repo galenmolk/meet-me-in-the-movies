@@ -16,8 +16,8 @@ function Landing() {
 
     const colors = ['#596B64', '#EAC3B7', '#EEE5D1'];
 
-    let speedX = DEFAULT_SPEEDX * 2;
-    let speedY = DEFAULT_SPEEDY * 2;
+    let speedX = DEFAULT_SPEEDX;
+    let speedY = DEFAULT_SPEEDY;
     let posX = 0;
     let posY = 0;
 
@@ -46,14 +46,13 @@ function Landing() {
         speedY = DEFAULT_SPEEDY;
     };
 
-    const checkStraightBorder = () => {
-        const dvdLogo = dvdLogoRef.current;
-
+    const checkStraightBorder = (dvdLogo) => {
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
 
         const widthX = getBorderWidthX(windowWidth);
         const widthY = getBorderWidthY(windowWidth);
+
 
         if (posX <= widthX) {
             speedX = -speedX;
@@ -73,12 +72,17 @@ function Landing() {
     };
 
     const updatePosition = () => {
+        const dvdLogo = dvdLogoRef.current;
+
+        if (!dvdLogo) {
+            return;
+        }
+
         posX += speedX;
         posY += speedY;
 
-        checkStraightBorder();
+        checkStraightBorder(dvdLogo);
 
-        const dvdLogo = dvdLogoRef.current;
         dvdLogo.style.left = `${posX}px`;
         dvdLogo.style.top = `${posY}px`;
     };
