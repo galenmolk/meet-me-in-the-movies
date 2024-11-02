@@ -16,11 +16,13 @@
 
 #dvd-logo {
     position: absolute;
-    font-size: 2rem;
+    font-size: 20px;
     background-color: #EAC3B7;
-    padding: .1rem 2rem .1rem 2rem;
+    padding: 5px 10px 5px 10px;
+    width: 150px;
+    text-align: center;
     color: var(--brown);
-    border-radius: 65px;
+    border-radius: 100px;
     user-select: none;
     white-space: nowrap;
     box-shadow: 2px 3px 7px var(--tbrown);

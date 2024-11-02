@@ -6,11 +6,11 @@ function Landing() {
     const DEFAULT_SPEEDX = 0.35;
     const DEFAULT_SPEEDY = 0.35;
 
-    const BIG_WIDTH_X = 50;
-    const BIG_WIDTH_Y = 73;
+    const BIG_WIDTH_X = 70;
+    const BIG_WIDTH_Y = 74;
 
-    const SMALL_WIDTH_X = 26;
-    const SMALL_WIDTH_Y = 18;
+    const SMALL_WIDTH_X = 36;
+    const SMALL_WIDTH_Y = 23;
 
     const SCREEN_WIDTH_THRESHOLD = 768;
 
@@ -19,63 +19,61 @@ function Landing() {
     let posX = 0;
     let posY = 0;
 
-    const getBorderWidthX = () => {
-        return window.innerWidth > SCREEN_WIDTH_THRESHOLD ? BIG_WIDTH_X : SMALL_WIDTH_X;
+    const setDefaultPosition = () => {
+        const dvdLogo = dvdLogoRef.current;
+        posX = (window.innerWidth - dvdLogo.offsetWidth) * 0.5;
+        posY = (window.innerHeight - dvdLogo.offsetHeight) * 0.5;
+    };
+
+    const getBorderWidthX = (windowWidth) => {
+        return windowWidth > SCREEN_WIDTH_THRESHOLD ? BIG_WIDTH_X : SMALL_WIDTH_X;
     }
 
-    const getBorderWidthY = () => {
-        return window.innerWidth > SCREEN_WIDTH_THRESHOLD ? BIG_WIDTH_Y : SMALL_WIDTH_Y;
+    const getBorderWidthY = (windowWidth) => {
+        return windowWidth > SCREEN_WIDTH_THRESHOLD ? BIG_WIDTH_Y : SMALL_WIDTH_Y;
     }
 
     const handleResize = () => {
-        const dvdLogo = dvdLogoRef.current;
-
-        if (dvdLogo) {
-            posX = window.innerWidth * 0.5;
-            posY = window.innerHeight * 0.5;
-            speedX = DEFAULT_SPEEDX;
-            speedY = DEFAULT_SPEEDY;
-        }
+        setDefaultPosition();
+        speedX = DEFAULT_SPEEDX;
+        speedY = DEFAULT_SPEEDY;
     };
 
     const checkStraightBorder = () => {
         const dvdLogo = dvdLogoRef.current;
 
-        const width = window.innerWidth;
-        const height = window.innerHeight;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
 
-        const widthX = getBorderWidthX();
-        const widthY = getBorderWidthY();
+        const widthX = getBorderWidthX(windowWidth);
+        const widthY = getBorderWidthY(windowWidth);
 
         if (posX <= widthX) {
             speedX = -speedX;
-        } else if (posX + dvdLogo.offsetWidth >= width - widthX) {
+        } else if (posX + dvdLogo.offsetWidth >= windowWidth - widthX) {
             speedX = -speedX;
         }
 
         if (posY <= widthY) {
             speedY = -speedY;
-        } else if (posY + dvdLogo.offsetHeight >= height - widthY) {
+        } else if (posY + dvdLogo.offsetHeight >= windowHeight - widthY) {
             speedY = -speedY;
         }
     };
 
     const updatePosition = () => {
-        const dvdLogo = dvdLogoRef.current;
-        if (!dvdLogo) return;
-
         posX += speedX;
         posY += speedY;
 
         checkStraightBorder();
 
+        const dvdLogo = dvdLogoRef.current;
         dvdLogo.style.left = `${posX}px`;
         dvdLogo.style.top = `${posY}px`;
     };
 
     useEffect(() => {
-        posX = window.innerWidth * 0.5 - (dvdLogoRef.current.offsetWidth * 0.5);
-        posY = window.innerHeight * 0.5 - (dvdLogoRef.current.offsetHeight * 0.5);
+        setDefaultPosition();
 
         function animate() {
             updatePosition();
