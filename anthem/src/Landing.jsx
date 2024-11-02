@@ -6,18 +6,25 @@ function Landing() {
     const DEFAULT_SPEEDX = 0.35;
     const DEFAULT_SPEEDY = 0.35;
 
-    const BIG_WIDTH_X = 70;
-    const BIG_WIDTH_Y = 74;
+    const BIG_WIDTH_X = 50;
+    const BIG_WIDTH_Y = 50;
 
-    const SMALL_WIDTH_X = 36;
-    const SMALL_WIDTH_Y = 23;
+    const SMALL_WIDTH_X = 25;
+    const SMALL_WIDTH_Y = 25;
 
     const SCREEN_WIDTH_THRESHOLD = 768;
+
+    const colors = ['#596B64', '#EAC3B7', '#EEE5D1'];
 
     let speedX = DEFAULT_SPEEDX * 2;
     let speedY = DEFAULT_SPEEDY * 2;
     let posX = 0;
     let posY = 0;
+
+    const setColor = () => {
+        //const dvdLogo = dvdLogoRef.current;
+        //dvdLogo.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    }
 
     const setDefaultPosition = () => {
         const dvdLogo = dvdLogoRef.current;
@@ -50,14 +57,18 @@ function Landing() {
 
         if (posX <= widthX) {
             speedX = -speedX;
+            setColor();
         } else if (posX + dvdLogo.offsetWidth >= windowWidth - widthX) {
             speedX = -speedX;
+            setColor();
         }
 
         if (posY <= widthY) {
             speedY = -speedY;
+            setColor();
         } else if (posY + dvdLogo.offsetHeight >= windowHeight - widthY) {
             speedY = -speedY;
+            setColor();
         }
     };
 
@@ -73,6 +84,7 @@ function Landing() {
     };
 
     useEffect(() => {
+        setColor();
         setDefaultPosition();
 
         function animate() {

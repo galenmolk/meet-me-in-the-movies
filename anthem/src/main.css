@@ -3,8 +3,9 @@
     --tv-screen: #efefef;
     --brown: #35312F;
     --tbrown: #35312f81;
-    --green: #C0D1B0;
-    --pink: #E8BDA3;
+    --green: #596B64;
+    --pink: #EAC3B7;
+    --tan: #EEE5D1;
 }
 
 * {
@@ -92,10 +93,6 @@
 
 .border-overlay {
     position: fixed;
-    top: -3%;
-    left: -3%;
-    right: -3%;
-    bottom: -3%;
     pointer-events: none;
     z-index: 10;
 }
@@ -104,6 +101,10 @@
     .border-overlay {
         border: 50px solid var(--tv-border);
         border-radius: 100px;
+        top: -25px;
+        left: -25px;
+        right: -25px;
+        bottom: -25px;
     }
     .border-corner {
         width: 40px;
@@ -115,6 +116,10 @@
     .border-overlay {
         border: 100px solid var(--tv-border);
         border-radius: 200px;
+        top: -50px;
+        left: -50px;
+        right: -50px;
+        bottom: -50px;
     }
     .border-corner {
         width: 80px;
