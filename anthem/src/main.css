@@ -156,3 +156,19 @@
     bottom: 0;
     right: 0;
 }
+
+.border-bar {
+    background-color: var(--tv-border);
+    position: fixed;
+    pointer-events: none;
+    height: 10px;
+    width: 100%;
+}
+
+.top-bar {
+    top: 0;
+}
+
+.bottom-bar {
+    bottom: 0;
+}

@@ -6,6 +6,8 @@ function TvBorder() {
             <div className="border-corner top-right"></div>
             <div className="border-corner bottom-left"></div>
             <div className="border-corner bottom-right"></div>
+            <div className="border-bar top-bar"></div>
+            <div className="border-bar bottom-bar"></div>
         </>
     )
 }
