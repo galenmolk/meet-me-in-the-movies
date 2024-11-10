@@ -71,6 +71,7 @@
     height: 80%;
     border: 5px solid #596B64;
     border-radius: 3px;
+    box-shadow: 2px 3px 7px var(--tbrown);
 }
 
 .menu-button p {
