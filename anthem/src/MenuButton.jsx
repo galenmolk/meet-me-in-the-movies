@@ -6,7 +6,7 @@ function MenuButton({button}) {
             <div className="menu-button">
             <Link to={button.url} target={"_blank"} style={{ textDecoration: 'none'}}>
                 <div className="menu-button-bg">
-                    <img src='./mall-cop.png' alt="Mall Cop"></img>
+                    <img src={button.imgSrc !== undefined ? button.imgSrc : './mall-cop.png'} alt={button.alt}></img>
                 </div>
                 <p>{button.title}</p>
             </Link>

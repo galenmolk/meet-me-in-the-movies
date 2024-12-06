@@ -9,10 +9,25 @@
 }
 
 * {
+    /*
     cursor: url('/cursor.png') 8 16, auto;
+    */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.teaser-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.teaser-text {
+    width: 100%;
+    text-align: center;
+    margin: auto;
 }
 
 #dvd-logo {
