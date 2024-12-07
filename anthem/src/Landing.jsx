@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
 import TvBorder from "./TvBorder";
+import config from './Config';
 
 function Landing() {
     const dvdLogoRef = useRef(null);
-    const DEFAULT_SPEEDX = 0.35;
-    const DEFAULT_SPEEDY = 0.35;
+    const DEFAULT_SPEEDX = config.logoSpeed;
+    const DEFAULT_SPEEDY = config.logoSpeed;
 
     const BIG_WIDTH_X = 50;
     const BIG_WIDTH_Y = 50;
@@ -108,7 +109,9 @@ function Landing() {
     return (
         <>
             <TvBorder/>
-            <div id="dvd-logo" ref={dvdLogoRef}>Oliva Wendel</div>
+            <div id="dvd-logo" ref={dvdLogoRef}>
+                <img src='./name.png'></img>
+            </div>
         </>
     )
 }

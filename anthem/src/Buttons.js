@@ -1,10 +1,10 @@
 const buttons = [
-  { title: "Presave", url: "https://www.google.com/", alt: "" },
-  { title: "Watch", url: "https://www.google.com/", alt: "", imgSrc: "./cat.gif" },
-  { title: "Listen", url: "https://open.spotify.com/artist/6VFhe94v6lnp9FLqRdfgAx?si=WAjnhtIvThuAlg-ZdZYS8g", alt: "Olivia Wendel on Spotify" },
-  { title: "Follow", url: "https://www.google.com/", alt: "" },
-  { title: "Deleted Scenes", url: "https://www.google.com/", alt: "" },
-  { title: "Merch", url: "https://www.google.com/", alt: "" },
+  { title: "presave", url: "https://www.google.com/", alt: "" },
+  { title: "watch", url: "https://www.google.com/", alt: "", imgSrc: "./cat.gif" },
+  { title: "listen", url: "https://open.spotify.com/artist/6VFhe94v6lnp9FLqRdfgAx?si=WAjnhtIvThuAlg-ZdZYS8g", alt: "Olivia Wendel on Spotify" },
+  { title: "follow", url: "https://www.google.com/", alt: "" },
+  { title: "deleted scenes", url: "https://www.google.com/", alt: "" },
+  { title: "merch", url: "https://www.google.com/", alt: "" },
 ];
 
 export default buttons;

@@ -8,31 +8,27 @@ function Home() {
         <> 
             <TvBorder/>
 
-            <div className="container-fluid hero-container" onClick={() => {console.log('h')}}>
-                    <div className="row">
-                        <div className="justify-content-center">
-                            <h1 className="text-center">OLIVIA WENDEL</h1>
-                        </div>                    
+            <div className="container-fluid hero-container" >
+                <img className="name-img" src='./name.png' alt='Olivia Wendel'></img>
+                <div className="row">
+                    <div className="col-12 justify-content-center align-items-center">
+                        <p className="album-title text-center">Meet Me In The Movies</p>
                     </div>
-                    <div className="row">
-                        <div className="col-12 justify-content-center">
-                            <h2 className="text-center">Meet Me In The Movies</h2>
-                        </div>
-                        <div className="col-12 justify-content-center">
-                            <h2 className="text-center">Out - January 31st 2025</h2>
-                        </div>
+                    <div className="col-12 justify-content-center">
+                        <p className="release-date text-center">Out  ~  January 31st 2025</p>
                     </div>
                 </div>
+            </div>
 
-                <div className="container menu">
-                    <div className="row">
-                        {buttons.map((b, index) => {
-                            return <MenuButton button={b} key={index}/>
-                        })}
-                    </div>
+            <div className="container menu">
+                <div className="row">
+                    {buttons.map((b, index) => {
+                        return <MenuButton button={b} key={index}/>
+                    })}
                 </div>
+            </div>
 
-                <SocialCard />
+            <SocialCard />
         </>
     )
 }

@@ -18,7 +18,7 @@
 
 .social-card img {
     position: relative;
-    margin-top: -2px;
+    margin-top: -4px;
     width: 24px;
     height: 24px;
     margin-right: 2px;
@@ -27,8 +27,8 @@
 
 .social-card p {
     display: inline;
-    font-size: 18px;
+    font-size: 20px;
     margin-left: 2px;
     cursor: url('/cursor-hover.png') 8 16, auto;
-    color: var(--tv-border);
+    color: var(--marie-green);
 }

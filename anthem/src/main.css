@@ -1,20 +1,23 @@
 :root {
-    --tv-border: #1A1A1A;
-    --tv-screen: #efefef;
-    --brown: #35312F;
-    --tbrown: #35312f81;
-    --green: #596B64;
-    --pink: #EAC3B7;
-    --tan: #EEE5D1;
+    --marie-cream: rgb(242, 229, 210);
+    --marie-black: rgb(13, 14, 16);
+    --marie-rose: rgb(248, 196, 183);
+    --marie-green: rgb(79, 108, 99);
+    --shadow: #0d0e106f;
 }
 
 * {
-    /*
-    cursor: url('/cursor.png') 8 16, auto;
-    */
-    margin: 0;
-    padding: 0;
+    cursor: url('/cursor.png') 22 2, auto;
     box-sizing: border-box;
+    font-family: 'Merriweather';
+}
+
+html {
+    background-color: var(--marie-cream);
+}
+
+#root {
+    background-color: var(--marie-cream);
 }
 
 .teaser-container {
@@ -25,29 +28,72 @@
 }
 
 .teaser-text {
-    width: 100%;
+    color: var(--marie-black);
+    background-color: var(--marie-rose);
     text-align: center;
     margin: auto;
+    padding: 10px 15px 10px 15px;
+    font-size: 24px;
+    font-style: italic;
+    border: 1px solid var(--marie-black);
+    box-shadow: 2px 3px 7px var(--shadow);
+    border-radius: 100px;
+    animation: grow 2s ease-in-out forwards infinite;
+}
+
+@keyframes grow {
+    0% {
+        padding: 10px 15px 10px 15px;
+    }
+    50% {
+        padding: 13px 18px 13px 18px;
+    }
+    100% {
+        padding: 10px 15px 10px 15px;
+    }
 }
 
 #dvd-logo {
     position: absolute;
     font-size: 20px;
-    background-color: #EAC3B7;
-    padding: 5px 10px 5px 10px;
+    background-color: var(--marie-rose);
+    padding: 10px 10px 10px 10px;
     width: 150px;
     text-align: center;
-    color: var(--brown);
-    border-radius: 100px;
+    color: var(--marie-black);
+    border-radius: 20px;
     user-select: none;
     white-space: nowrap;
-    box-shadow: 2px 3px 7px var(--tbrown);
-    border: 1px solid var(--brown);
+    box-shadow: 2px 3px 7px var(--shadow);
+    border: 1px solid var(--marie-black);
     font-style: italic;
 }
 
+#dvd-logo img {
+    width: 90px;
+}
+
 .hero-container {
-    color: var(--tv-border);
+    color: var(--marie-black);
+    display: flex;
+    flex-direction: column;
+}
+
+.album-title {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.release-date {
+    font-style: italic;
+    font-size: 20px;
+    white-space: pre-wrap;
+}
+
+.name-img {
+    margin: auto;
+    width: 200px;
+    padding-bottom: 25px;
 }
 
 @media (max-width: 768px) {
@@ -68,35 +114,33 @@
 }
 
 .menu-button {
-    cursor: url('/cursor-hover.png') 8 16, auto;
+    cursor: url('/cursor-hover.png') 22 0, auto;
     display: block;
     background-color: clear;
     width: 270px;
     height: 188px;
-    color: #fff;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
 }
 
 .menu-button-bg {
-    cursor: url('/cursor-hover.png') 8 16, auto;
-    background-color: #ACD5D3;
+    cursor: url('/cursor-hover.png') 22 0, auto;
+    background-color: var(--marie-green);
     width: 100%;
     height: 80%;
-    border: 5px solid #596B64;
+    border: 5px solid var(--marie-black);
     border-radius: 3px;
-    box-shadow: 2px 3px 7px var(--tbrown);
+    box-shadow: 2px 3px 7px var(--shadow);
 }
 
 .menu-button p {
-    cursor: url('/cursor-hover.png') 8 16, auto;
+    cursor: url('/cursor-hover.png') 22 0, auto;
     text-align: center;
-    font-weight: bold;
     position: relative;
-    top: 2%;
-    color: var(--tv-border);
-    font-size: 1.25rem;
+    top: 4%;
+    color: var(--marie-black);
+    font-size: 18px;
     text-decoration: none;
 }
 
@@ -105,7 +149,7 @@
 }
 
 .menu-button img {
-    cursor: url('/cursor-hover.png') 8 16, auto;
+    cursor: url('/cursor-hover.png') 22 0, auto;
     top: 0;
     width: 100%;
     height: 100%;
@@ -119,7 +163,7 @@
 
 @media (max-width: 768px) {
     .border-overlay {
-        border: 50px solid var(--tv-border);
+        border: 50px solid var(--marie-black);
         border-radius: 100px;
         top: -25px;
         left: -25px;
@@ -134,7 +178,7 @@
 
 @media (min-width: 768px) {
     .border-overlay {
-        border: 100px solid var(--tv-border);
+        border: 100px solid var(--marie-black);
         border-radius: 200px;
         top: -50px;
         left: -50px;
@@ -148,7 +192,7 @@
 }
 
 .border-corner {
-    background-color: var(--tv-border);
+    background-color: var(--marie-black);
     position: fixed;
     pointer-events: none;
 }
@@ -174,7 +218,7 @@
 }
 
 .border-bar {
-    background-color: var(--tv-border);
+    background-color: var(--marie-black);
     position: fixed;
     pointer-events: none;
     height: 10px;
