@@ -28,6 +28,7 @@ html {
 }
 
 .teaser-text {
+    cursor: url('/cursor-hover.png') 22 0, auto;
     color: var(--marie-black);
     background-color: var(--marie-rose);
     text-align: center;
