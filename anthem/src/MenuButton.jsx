@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function MenuButton({button}) {
     return (
-        <div className='menu-link col-12 col-xl-4 mb-4'>
+        <div className='menu-link col-12 col-xl-4 mb-4 fade-in'>
             <div className="menu-button">
             <Link to={button.url} target={"_blank"} style={{ textDecoration: 'none'}}>
                 <div className="menu-button-bg">

@@ -8,7 +8,7 @@ function Home() {
         <> 
             <TvBorder/>
 
-            <div className="container-fluid hero-container" >
+            <div className="container-fluid hero-container fade-in" >
                 <img className="name-img" src='./name.png' alt='Olivia Wendel'></img>
                 <div className="row">
                     <div className="col-12 justify-content-center align-items-center">
