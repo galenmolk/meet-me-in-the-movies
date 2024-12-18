@@ -32,7 +32,8 @@ jobs:
       - name: Set Git config
         run: |
           git config --global user.email "galenmolk@gmail.com" 
-          git config --global user.name "Galen Molk"        
+          git config --global user.name "Galen Molk" 
+          git config --global url.https://${{ secrets.MY_PAT }}@github.com/.insteadOf https://github.com/
 
       - name: Deploy to GitHub Pages
         run: gh-pages -d dist
