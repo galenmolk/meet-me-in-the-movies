@@ -6,7 +6,7 @@
   "homepage": "https://oliviawendelmusic.com",
   "scripts": {
     "dev": "vite",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && echo 'oliviawendelmusic.com' > ./dist/CNAME",
     "build": "vite build",
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",
