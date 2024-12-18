@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main 
 
 jobs:
   deploy:
@@ -15,26 +15,24 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
-        with: 
+        with:
           node-version: '21'
 
-      - name: Instal dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Build project
+      - name: Build the project
         run: npm run build
 
       - name: Add CNAME file
-        run: echo "oliviawendelmusic.com" > ./dist/CNAME
+        run: echo 'oliviawendelmusic.com' > ./dist/CNAME 
 
       - name: Set Git config
         run: |
-          git config --global user.email "galenmolk@gmail.com"
-          git config --global user.name "Galen Molk"
+          git config --global user.email "galenmolk@gmail.com" 
+          git config --global user.name "Galen Molk"        
 
-      - name: Deploy to GH Pages
+      - name: Deploy to GitHub Pages
         run: npx gh-pages -d dist
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
