@@ -27,6 +27,11 @@ jobs:
       - name: Add CNAME file
         run: echo "oliviawendelmusic.com" > ./dist/CNAME
 
+      - name: Set Git config
+        run: |
+          git config --global user.email "galenmolk@gmail.com"
+          git config --global user.name "Galen Molk"
+
       - name: Deploy to GH Pages
         run: npx gh-pages -d dist
         env:
