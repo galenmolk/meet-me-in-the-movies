@@ -1,0 +1,28 @@
+name: Example GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+
+    - name: Set up Git
+      run: |
+        git config --global user.name "Galen Molk"
+        git config --global user.email "galenmolk@gmail.com"
+        
+    - name: Make changes and commit
+      run: |
+        # Make your changes here
+        echo "test" > test.txt
+        git add .
+        git commit -m "Automated commit from GitHub Action"
+        git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
