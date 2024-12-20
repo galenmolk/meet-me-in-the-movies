@@ -110,29 +110,32 @@ html {
 }
 
 .menu {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px auto 30px auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    max-width: 870px;
+}
+
+@media (max-width: 1050px) {
+    .menu {
+      grid-template-columns: 1fr;
+      grid-gap: 20px
+    }
 }
 
 .menu-button {
     cursor: url('/cursor-hover.png') 22 0, auto;
-    display: block;
-    background-color: clear;
-    width: 270px;
-    height: 188px;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-.menu-button-bg {
-    cursor: url('/cursor-hover.png') 22 0, auto;
     background-color: var(--marie-green);
-    width: 100%;
-    height: 80%;
-    border: 5px solid var(--marie-black);
+    width: 270px;
+    height: 144px;
+    margin: 0 auto;
+    border: 2px solid var(--marie-black);
     border-radius: 3px;
     box-shadow: 2px 3px 7px var(--shadow);
+    position: relative;
+    overflow: hidden;
 }
 
 .menu-button p {
@@ -150,10 +153,11 @@ html {
 }
 
 .menu-button img {
+    position: absolute;
     cursor: url('/cursor-hover.png') 22 0, auto;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .border-overlay {

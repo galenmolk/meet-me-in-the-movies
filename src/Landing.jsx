@@ -3,6 +3,10 @@ import TvBorder from "./TvBorder";
 import config from './Config';
 
 function Landing() {
+    const randomSign = () => {
+        return Math.random() > 0.5 ? 1 : -1;
+    }
+
     const dvdLogoRef = useRef(null);
     const DEFAULT_SPEEDX = config.logoSpeed;
     const DEFAULT_SPEEDY = config.logoSpeed;
@@ -17,8 +21,8 @@ function Landing() {
 
     const colors = ['#596B64', '#EAC3B7', '#EEE5D1'];
 
-    let speedX = DEFAULT_SPEEDX;
-    let speedY = DEFAULT_SPEEDY;
+    let speedX = DEFAULT_SPEEDX * randomSign();
+    let speedY = DEFAULT_SPEEDY * randomSign();
     let posX = 0;
     let posY = 0;
 
@@ -43,8 +47,8 @@ function Landing() {
 
     const handleResize = () => {
         setDefaultPosition();
-        speedX = DEFAULT_SPEEDX;
-        speedY = DEFAULT_SPEEDY;
+        speedX = DEFAULT_SPEEDX * randomSign();
+        speedY = DEFAULT_SPEEDY * randomSign();
     };
 
     const checkStraightBorder = (dvdLogo) => {
@@ -53,7 +57,6 @@ function Landing() {
 
         const widthX = getBorderWidthX(windowWidth);
         const widthY = getBorderWidthY(windowWidth);
-
 
         if (posX <= widthX) {
             speedX = -speedX;

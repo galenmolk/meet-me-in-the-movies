@@ -20,12 +20,10 @@ function Home() {
                 </div>
             </div>
 
-            <div className="container menu">
-                <div className="row">
+            <div className="menu">
                     {buttons.map((b, index) => {
-                        return <MenuButton button={b} key={index}/>
-                    })}
-                </div>
+                        return <MenuButton button={b} key={index} />
+                    })}         
             </div>
 
             <SocialCard />

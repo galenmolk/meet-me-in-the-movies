@@ -2,19 +2,12 @@ import { Link } from "react-router-dom";
 
 function MenuButton({button}) {
     return (
-        <div className='menu-link col-12 col-xl-4 mb-4 fade-in'>
-            <div className="menu-button">
+        <div className="menu-button fade-in" style={{ animationDelay: `${button.delay}s`}}>
             <Link to={button.url} target={"_blank"} style={{ textDecoration: 'none'}}>
-                <div className="menu-button-bg">
-                    {button.imgSrc !== undefined ? 
-                    (<img src={button.imgSrc} alt={button.alt}></img>) 
-                    :
-                    (<></>)
-                }
-                </div>
-                <p>{button.title}</p>
+                {button.imgSrc !== undefined ? 
+                    (<img src={button.imgSrc} alt={button.alt} style={{ height: `${button.height}%`}}></img>) :
+                    (<></>)}
             </Link>
-            </div>
         </div>
     );
 }
