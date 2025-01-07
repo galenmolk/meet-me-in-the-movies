@@ -56,10 +56,9 @@ html {
 
 #dvd-logo {
     position: absolute;
-    font-size: 20px;
     background-color: var(--marie-rose);
     padding: 10px 10px 10px 10px;
-    width: 150px;
+    width: 200px;
     text-align: center;
     color: var(--marie-black);
     border-radius: 20px;
@@ -71,7 +70,7 @@ html {
 }
 
 #dvd-logo img {
-    width: 90px;
+    width: 150px;
 }
 
 .hero-container {
@@ -93,7 +92,7 @@ html {
 
 .name-img {
     margin: auto;
-    width: 200px;
+    width: 350px;
     padding-bottom: 25px;
 }
 
