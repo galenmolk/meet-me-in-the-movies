@@ -25,8 +25,8 @@ function App() {
 
   return (
     <>
-      <audio ref={bgMusicRef} preload="auto">
-        <source src="./bg-music.mp3" type="audio/mpeg"/>
+      <audio ref={bgMusicRef} preload="auto" loop>
+        <source src="./public/cm5lxjx43000008l76lqkck98.mp3" type="audio/mpeg"/>
         Your browser does not support the audio element.
       </audio>
       {hasEntered ? <Home /> : <Landing />}
