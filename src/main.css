@@ -70,7 +70,7 @@ html {
 }
 
 #dvd-logo img {
-    width: 150px;
+    width: 250px;
 }
 
 .hero-container {
@@ -81,7 +81,7 @@ html {
 
 .album-title {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 26px;
 }
 
 .release-date {

@@ -111,7 +111,7 @@ function Landing() {
 
     return (
         <>
-            <TvBorder/>
+            <TvBorder />
             <div id="dvd-logo" ref={dvdLogoRef}>
                 <img src='./name.png'></img>
             </div>
