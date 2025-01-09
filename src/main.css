@@ -206,6 +206,15 @@ html {
         width: 40px;
         height: 40px;
     }
+    .portrait-right {
+        display: none;
+        position: relative;
+        transform: translate(0%, 0%);
+    }
+    .portrait-left {
+        position: relative;
+        transform: translate(0%, 0%);
+    }
 }
 
 @media (min-width: 768px) {
@@ -274,4 +283,38 @@ html {
     to {
         opacity: 1;
     }
+}
+
+.page-content {
+    z-index: 2;
+}
+
+.bg-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    overflow: hidden;
+}
+
+.portrait-left {
+    width: 200px;
+    position: absolute;
+    top: 25%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    margin: auto;
+    padding: 10px;
+}
+
+.portrait-right {
+    width: 200px;
+    position: absolute;
+    top: 75%;
+    left: 88%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    padding: 10px;
 }
