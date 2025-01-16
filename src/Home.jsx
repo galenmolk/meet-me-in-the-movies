@@ -7,12 +7,10 @@ function Home() {
     return (
         <> 
             <TvBorder/>
-
             <div className="page-content">
+                <img className="bg-img" src="../public/OliviaWendel.jpg"></img>
                 <div className="container-fluid hero-container fade-in" >
-                    <img className="name-img" src='./name.png' alt='Olivia Wendel'></img>
-                    {/*<img className="portrait-left" src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM="></img>
-                    */}
+                    <img className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
                     <div className="row">
                         <div className="col-12 justify-content-center align-items-center">
                             <p className="album-title text-center">Meet Me In The Movies</p>
@@ -29,8 +27,6 @@ function Home() {
                         })}         
                 </div>
 
-{/* 
-                <img className="portrait-right" src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM="></img>*/}
                 <SocialCard />
             </div>
         </>

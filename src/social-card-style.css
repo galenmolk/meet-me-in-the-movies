@@ -38,7 +38,6 @@
     font-size: 24px;
     margin-left: 2px;
     cursor: url('/cursor-hover.png') 8 16, auto;
-    color: var(--marie-black);
 }
 
 .social-card:hover p {

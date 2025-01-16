@@ -113,7 +113,7 @@ function Landing() {
         <>
             <TvBorder />
             <div id="dvd-logo" ref={dvdLogoRef}>
-                <img src='./name.png'></img>
+                <img src='./name-black.png'></img>
             </div>
         </>
     )
