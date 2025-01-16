@@ -6,10 +6,24 @@
     --shadow: #0d0e106f;
 }
 
+@font-face {
+    font-family: "AlfaSlabOne";
+    src: local("AlfaSlabOne"),
+        url("./fonts/AlfaSlabOne.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Geologica";
+    src: local("Geologica"),
+        url("./fonts/Geologica.ttf") format("truetype");
+    font-weight: normal;
+}
+
 * {
     cursor: url('/cursor.png') 22 2, auto;
     box-sizing: border-box;
-    font-family: 'Merriweather';
+    font-family: 'Geologica';
 }
 
 html {
@@ -85,7 +99,6 @@ html {
 }
 
 .release-date {
-    font-style: italic;
     font-size: 20px;
     white-space: pre-wrap;
 }

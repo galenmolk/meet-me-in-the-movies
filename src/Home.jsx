@@ -18,7 +18,7 @@ function Home() {
                             <p className="album-title text-center">Meet Me In The Movies</p>
                         </div>
                         <div className="col-12 justify-content-center">
-                            <p className="release-date text-center">Out  ~  January 31st 2025</p>
+                            <p className="release-date text-center">January 31</p>
                         </div>
                     </div>
                 </div>
