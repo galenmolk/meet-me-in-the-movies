@@ -1,5 +1,5 @@
 const config = {
-    isPrototype: false,
+    isPrototype: true,
     logoSpeed: 0.1,
     autoEnter: true
 };
