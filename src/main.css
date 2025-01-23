@@ -31,6 +31,7 @@
 html {
     background-color: var(--marie-black);
     overflow-x: hidden;
+    overscroll-behavior: none;
 }
 
 .teaser-container {
@@ -38,6 +39,7 @@ html {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: var(--marie-black);
 }
 
 .teaser-text {
@@ -173,11 +175,11 @@ html {
 }
 
 .menu-button:hover {
-    box-shadow: 2px 2px 30px 15px var(--marie-rose);
+    box-shadow: 2px 2px 60px 0px var(--marie-rose);
 }
 
 .menu-button:hover img {
-    height: 130px;
+    height: 145px;
     animation: none;
 }
 
@@ -188,7 +190,7 @@ html {
     left: 50%;
     transform-origin: center center;
     transform: translate(-50%, -50%);
-    height: 115px;
+    height: 160px;
     transition: 0.35s;
     animation: shake 0.75s ease-in-out forwards 0s;
 }
