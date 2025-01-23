@@ -2,23 +2,30 @@ import TvBorder from "./TvBorder";
 import buttons from "./Buttons";
 import MenuButton from "./MenuButton";
 import SocialCard from "./SocialCard";
+import { useEffect } from "react";
 
 function Home() {
+    const handleResize = () => {
+        if (window.innerWidth > 860) {
+            document.documentElement.scrollTop = 0;
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <> 
             <TvBorder/>
             <div className="page-content">
-                <img className="bg-img" src="../public/OliviaWendel.jpg"></img>
+                <img className="bg-img" src="../OliviaWendel.png"></img>
                 <div className="container-fluid hero-container fade-in" >
                     <img className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
-                    <div className="row">
-                        <div className="col-12 justify-content-center align-items-center">
-                            <p className="album-title text-center">Meet Me In The Movies</p>
-                        </div>
-                        <div className="col-12 justify-content-center">
-                            <p className="release-date text-center">January 31</p>
-                        </div>
-                    </div>
                 </div>
 
                 <div className="menu">
