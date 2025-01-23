@@ -15,7 +15,7 @@
     cursor: url('/cursor-hover.png') 8 16, auto;
     border-radius: 40px;
     background-color: rgba(0,0,0,0);
-    box-shadow: 0px 0px 20px 2px inset var(--marie-rose);
+    /*box-shadow: 0px 0px 20px 2px inset var(--marie-rose);*/
 }
 
 .social-card img {
@@ -29,17 +29,20 @@
 }
 
 .social-card:hover img {
-    width: 30px;
-    height: 30px;
+    width: 00px;
+    height: 00px;
 }
 
 .social-card p {
     display: inline;
     font-size: 24px;
     margin-left: 2px;
+    transition: 0.5s;
     cursor: url('/cursor-hover.png') 8 16, auto;
 }
 
 .social-card:hover p {
     text-decoration: underline;
+    color: var(--marie-rose);
+    font-size: 26px;
 }
