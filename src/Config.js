@@ -1,6 +1,7 @@
 const config = {
-    isPrototype: true,
-    logoSpeed: 0.1
+    isPrototype: false,
+    logoSpeed: 0.1,
+    autoEnter: true
 };
 
 export default config;

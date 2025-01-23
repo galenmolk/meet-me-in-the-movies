@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 import Home from './Home';
 import Landing from './Landing';
+import config from './Config';
 
 function App() {
-  const [hasEntered, setHasEntered] = useState(false); 
+  const [hasEntered, setHasEntered] = useState(config.autoEnter); 
   const bgMusicRef = useRef(null);
 
   const enterSite = () => {
@@ -20,7 +21,11 @@ function App() {
   };
 
   useEffect(() => {
-    window.addEventListener('click', enterSite);
+    if (config.autoEnter) {
+      playMusic();
+    } else {
+      window.addEventListener('click', enterSite);
+    }
   }, []);
 
   return (
