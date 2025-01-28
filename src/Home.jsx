@@ -5,17 +5,29 @@ import SocialCard from "./SocialCard";
 import { useEffect } from "react";
 
 function Home() {
+    let lastViewportWidth = window.innerWidth;
+
     const handleResize = () => {
-        if (window.innerWidth > 860) {
+        const currentWidth = window.innerWidth;
+
+        if (window.innerWidth > 860 && currentWidth !== lastViewportWidth) {
             document.documentElement.scrollTop = 0;
         }
+
+        lastViewportWidth = currentWidth;
+    };
+
+    let resizeTimeout;
+    const attemptResize = () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(handleResize, 100);
     };
 
     useEffect(() => {
-        window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', attemptResize);
 
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', attemptResize);
         };
     }, []);
 
