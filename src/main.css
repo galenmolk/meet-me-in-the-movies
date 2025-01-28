@@ -211,28 +211,24 @@ html {
     pointer-events: none;
     z-index: 10;
     margin: auto;
-    max-width: 1300px;
+    max-width: 1250px;
+    border: 100px solid var(--marie-black);
+    border-radius: 200px;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 500px) {
     .border-overlay {
         border: 50px solid var(--marie-black);
         border-radius: 100px;
+        max-width: 1150px;
         top: -25px;
         left: -25px;
         right: -25px;
         bottom: -25px;
-    }
-}
-
-@media (min-width: 768px) {
-    .border-overlay {
-        border: 100px solid var(--marie-black);
-        border-radius: 200px;
-        top: -50px;
-        left: -50px;
-        right: -50px;
-        bottom: -50px;
     }
 }
 
