@@ -2,9 +2,12 @@ import TvBorder from "./TvBorder";
 import buttons from "./Buttons";
 import MenuButton from "./MenuButton";
 import SocialCard from "./SocialCard";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 function Home() {
+    const bgImg = useRef(null);
+    const overlay = useRef(null);
+
     let lastViewportWidth = window.innerWidth;
 
     const handleResize = () => {
@@ -24,8 +27,11 @@ function Home() {
     };
 
     useEffect(() => {
+        setTimeout(() => {
+            bgImg.current.classList.add('loaded');
+        }, 650);
         window.addEventListener('resize', attemptResize);
-
+        
         return () => {
             window.removeEventListener('resize', attemptResize);
         };
@@ -33,9 +39,13 @@ function Home() {
 
     return (
         <> 
-            <TvBorder/>
+            <div className="border-overlay" ref={overlay} ></div>
+            <div className="border-bar top-bar"></div>
+            <div className="border-bar bottom-bar"></div>
+            
             <div className="page-content">
-                <img className="bg-img" src="../OliviaWendel.png"></img>
+            <img className="bg-img" ref={bgImg} src="../OliviaWendel.png"></img>
+
                 <div className="container-fluid hero-container fade-in" >
                     <img className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
                 </div>
