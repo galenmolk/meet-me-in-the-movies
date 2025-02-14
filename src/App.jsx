@@ -11,7 +11,14 @@ function App() {
     window.removeEventListener('click', enterSite);
     setHasEntered(true);
     playMusic();
-  };  
+  };
+
+  const pauseMusic = () => {
+    const audio = bgMusicRef.current;
+    if (audio) {
+      audio.pause();
+    }
+  };
 
   const playMusic = () => {
     const audio = bgMusicRef.current;
@@ -22,10 +29,18 @@ function App() {
 
   useEffect(() => {
     if (config.autoEnter) {
+      window.addEventListener('blur', pauseMusic);
+      window.addEventListener('focus', playMusic);
       playMusic();
     } else {
       window.addEventListener('click', enterSite);
     }
+
+    return () => {
+      window.removeEventListener('click', enterSite);
+      window.removeEventListener('blur', pauseMusic);
+      window.removeEventListener('focus', playMusic);
+    };
   }, []);
 
   return (
