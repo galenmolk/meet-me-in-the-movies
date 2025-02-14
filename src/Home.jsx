@@ -43,7 +43,7 @@ function Home() {
             <div className="border-bar bottom-bar"></div>
             
             <div className="page-content">
-            <img className="bg-img" ref={bgImg} src="../OliviaWendel.png"></img>
+            <img className="bg-img" ref={bgImg} src="../OliviaWendel.webp"></img>
 
                 <div className="container-fluid hero-container fade-in" >
                     <img className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
