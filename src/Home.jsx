@@ -1,4 +1,3 @@
-import TvBorder from "./TvBorder";
 import buttons from "./Buttons";
 import MenuButton from "./MenuButton";
 import SocialCard from "./SocialCard";

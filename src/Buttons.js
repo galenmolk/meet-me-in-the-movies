@@ -1,7 +1,7 @@
 const buttons = [
   { 
     title: "presave", 
-    url: "https://open.spotify.com/artist/6VFhe94v6lnp9FLqRdfgAx?si=MCv1dnlES3-93sCnUfsDaA", 
+    url: "https://ffm.to/oliviawendel.OWE", 
     imgSrc: "./presave.png", 
     alt: "Olivia Wendel Presave", 
     height: "115",
@@ -9,7 +9,7 @@ const buttons = [
   },
   { 
     title: "watch", 
-    url: "https://www.youtube.com/watch?v=1ZISUK3KqoI", 
+    url: "https://www.youtube.com/watch?v=tfrulntFfOk",
     imgSrc: "./watch.png", 
     alt: "Olivia Wendel Watch", 
     height: "115",
@@ -17,7 +17,7 @@ const buttons = [
   },
   { 
     title: "listen", 
-    url: "https://open.spotify.com/artist/6VFhe94v6lnp9FLqRdfgAx?si=WAjnhtIvThuAlg-ZdZYS8g", 
+    url: "https://open.spotify.com/artist/6VFhe94v6lnp9FLqRdfgAx?si=ums1yNPbRe2p5PdYbdzMtw", 
     imgSrc:"./listen.png",  
     alt: "Olivia Wendel on Spotify", 
     height: "115",
@@ -25,17 +25,17 @@ const buttons = [
   },
   { 
     title: "follow", 
-    url: "https://www.instagram.com/oliviawendelmusic", 
+    url: "https://www.instagram.com/oliviawendelmusic/", 
     imgSrc: "./follow.png", 
     alt: "Olivia Wendel Follow", 
     height: "115",
     delay: "0.3"
   },
   { 
-    title: "deleted scenes", 
-    url: "https://open.spotify.com/artist/6VFhe94v6lnp9FLqRdfgAx?si=MCv1dnlES3-93sCnUfsDaA", 
+    title: "outtakes", 
+    url: "https://youtu.be/OwbS4PGqBEo?si=xACFv-ulRTXU_lN2&t=268",
     imgSrc:"./outtakes.png", 
-    alt: "Olivia Wendel Deleted Scenes", 
+    alt: "Olivia Wendel Outtakes", 
     height: "115",
     delay: "0.4"
   },
