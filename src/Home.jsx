@@ -1,9 +1,10 @@
 import buttons from "./Buttons";
 import MenuButton from "./MenuButton";
 import SocialCard from "./SocialCard";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Home() {
+    const [bgImgSrc, setBgImgSrc] = useState("../OliviaWendel.webp")
     const bgImg = useRef(null);
     const overlay = useRef(null);
 
@@ -36,6 +37,14 @@ function Home() {
         };
     }, []);
 
+    const toggleBgImg = () => {
+        if (bgImgSrc === "../OliviaWendel.webp") {
+            setBgImgSrc("../OliviaWendel-Alt.jpg");
+        } else {
+            setBgImgSrc("../OliviaWendel.webp");
+        }
+    };
+
     return (
         <> 
             <div className="border-overlay" ref={overlay} ></div>
@@ -43,10 +52,10 @@ function Home() {
             <div className="border-bar bottom-bar"></div>
             
             <div className="page-content">
-            <img className="bg-img" ref={bgImg} src="../OliviaWendel.webp"></img>
+            <img className="bg-img" ref={bgImg} src={bgImgSrc}></img>
 
                 <div className="container-fluid hero-container fade-in" >
-                    <img className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
+                    <img onClick={toggleBgImg} className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
                 </div>
 
                 <div className="menu">
