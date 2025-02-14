@@ -39,7 +39,7 @@ function Home() {
 
     const toggleBgImg = () => {
         if (bgImgSrc === "../OliviaWendel.webp") {
-            setBgImgSrc("../OliviaWendel-Alt.jpg");
+            setBgImgSrc("../OliviaWendel-Alt.webp");
         } else {
             setBgImgSrc("../OliviaWendel.webp");
         }
