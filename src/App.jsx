@@ -5,50 +5,24 @@ import config from './Config';
 
 function App() {
   const [hasEntered, setHasEntered] = useState(config.autoEnter); 
-  const bgMusicRef = useRef(null);
 
   const enterSite = () => {
     window.removeEventListener('click', enterSite);
     setHasEntered(true);
-    playMusic();
   };
 
-  const pauseMusic = () => {
-    const audio = bgMusicRef.current;
-    if (audio) {
-      audio.pause();
-    }
-  };
-
-  const playMusic = () => {
-    const audio = bgMusicRef.current;
-    if (audio) {
-      audio.play();
-    }
-  };
 
   useEffect(() => {
-    if (config.autoEnter) {
-      window.addEventListener('blur', pauseMusic);
-      window.addEventListener('focus', playMusic);
-      playMusic();
-    } else {
+    if (!config.autoEnter) {
       window.addEventListener('click', enterSite);
     }
 
     return () => {
-      window.removeEventListener('click', enterSite);
-      window.removeEventListener('blur', pauseMusic);
-      window.removeEventListener('focus', playMusic);
     };
   }, []);
 
   return (
     <>
-      <audio ref={bgMusicRef} preload="auto" loop>
-        <source src="./cm5lxjx43000008l76lqkck98.mp3" type="audio/mpeg"/>
-        Your browser does not support the audio element.
-      </audio>
       {hasEntered ? <Home /> : <Landing />}
     </>
   )

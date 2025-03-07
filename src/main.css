@@ -96,7 +96,6 @@ html {
 .name-img {
     margin: auto;
     width: 300px;
-    padding-bottom: 25px;
 }
 
 @media (max-width: 768px) {
@@ -112,7 +111,7 @@ html {
 }
 
 .menu {
-    margin: 30px auto 30px auto;
+    margin: 15px auto 0 auto;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -248,7 +247,6 @@ html {
     background-color: var(--marie-black);
     position: relative;
     overflow: hidden;
-
 }
 
 .bg-img {
@@ -260,7 +258,17 @@ html {
     max-width: none;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.landing-img {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    width: 1050px;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: opacity 1s ease-in-out,  transform 1s ease-in-out;
 }
 
 .loaded {
@@ -282,4 +290,38 @@ html {
 
 .bottom-bar {
     bottom: 0;
+}
+
+@media (max-width: 1100px) {
+    .border-panel {
+        display: none;
+    }
+}
+
+.border-panel { 
+    z-index: 10;
+    background-color: red;
+    position: fixed;
+    pointer-events: none;
+    width: 1000px;
+    height: 100%;
+}
+
+.left-panel {
+    right: 1750px;
+    transform: translate(50%, 0%);
+}
+
+.right-panel {
+    right: 50%;
+}
+
+.empty {
+    width: 1100px;
+    height: 1000px
+}
+
+.entered-content {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }

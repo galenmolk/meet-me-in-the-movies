@@ -1,0 +1,13 @@
+.enter-text {
+    transform: translate(-50%, -50%);
+    left: 45%;
+    top: 17%;
+    position: absolute;
+    color: var(--off-white);
+    font-size: 34px;
+    font-family: 'AlfaSlabOne', serif;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+}
