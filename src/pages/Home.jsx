@@ -1,9 +1,9 @@
 import buttons from "../data/Buttons";
 import MenuButton from "../components/MenuButton";
 import SocialCard from "../components/SocialCard";
-import { useEffect, useRef, useState } from "react";
 import AudioPlayer from "../components/AudioPlayer";
 import TvBorder from "../components/TvBorder";
+import { useEffect, useRef, useState } from "react";
 
 function Home() {
     const [hasEntered, setHasEntered] = useState(false);
@@ -70,7 +70,6 @@ function Home() {
             window.addEventListener('focus', playMusic);    
             setHasEntered(true);
         }, 1000);
-
     };
 
     const playMusic = () => {
@@ -87,17 +86,17 @@ function Home() {
 
     const enteredJsx = () => {
         return <div className="entered-content" ref={enteredContentRef}>
-                    <div className="container-fluid hero-container fade-in" >
-                        <img className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
-                    </div>
-
-                    <div className="menu">
-                        {buttons.map((b, index) => {
-                            return <MenuButton button={b} key={index} />
-                        })}         
-                    </div>
-                    <SocialCard />
+                <div className="container-fluid hero-container fade-in" >
+                    <img className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
                 </div>
+
+                <div className="menu">
+                    {buttons.map((b, index) => {
+                        return <MenuButton button={b} key={index} />
+                    })}         
+                </div>
+                <SocialCard />
+            </div>
     };
 
     const empty = () => {
@@ -111,8 +110,8 @@ function Home() {
             <TvBorder />
             
             <div className="page-content">
-                <img className="bg-img" ref={bgImg} src={"../OliviaWendel.webp"}></img>
-                <img className="landing-img" ref={landingImg} src={"../OliviaWendel-Alt.webp"}></img>
+                <img className="bg-img" ref={bgImg} src={"./OW-BW.webp"}></img>
+                <img className="landing-img" ref={landingImg} src={"./OW-Collage.webp"}></img>
                 <p className="enter-text" ref={enterTextRef}>Enter</p>
                 {hasEntered ? enteredJsx() : empty()}
             </div>
