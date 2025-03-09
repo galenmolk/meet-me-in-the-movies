@@ -35,7 +35,7 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-window.addEventListener('click', (event) => {
+window.addEventListener('click', () => {
   clickCount++;
   if (clickCount >= CLICK_ENTER_COUNT) {
     config.isPrototype = false;

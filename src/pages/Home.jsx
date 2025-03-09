@@ -2,13 +2,14 @@ import buttons from "../data/Buttons";
 import MenuButton from "../components/MenuButton";
 import SocialCard from "../components/SocialCard";
 import { useEffect, useRef, useState } from "react";
+import AudioPlayer from "../components/AudioPlayer";
 
 function Home() {
     const [hasEntered, setHasEntered] = useState(false);
 
+    const audioRef = useRef(null);
     const bgImg = useRef(null);
     const landingImg = useRef(null);
-    const bgMusicRef = useRef(null);
     const enterTextRef = useRef(null);
     const enteredContentRef = useRef(null);
 
@@ -73,16 +74,14 @@ function Home() {
     };
 
     const playMusic = () => {
-        const audio = bgMusicRef.current;
-        if (audio) {
-          audio.play();
+        if (audioRef.current) {
+            audioRef.current.play();
         }
-      };
+    };
 
     const pauseMusic = () => {
-        const audio = bgMusicRef.current;
-        if (audio) {
-          audio.pause();
+        if (audioRef.current) {
+            audioRef.current.pause();
         }
       };
 
@@ -124,10 +123,7 @@ function Home() {
 
     return (
         <> 
-            <audio ref={bgMusicRef} preload="auto" loop>
-                <source src="./cm5lxjx43000008l76lqkck98.mp3" type="audio/mpeg"/>
-                Your browser does not support the audio element.
-            </audio>
+            <AudioPlayer ref={audioRef}/>
 
             {border()}
             
