@@ -1,0 +1,42 @@
+.border-overlay {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10;
+    margin: auto;
+    max-width: 1250px;
+    border: 100px solid var(--marie-black);
+    border-radius: 200px;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+}
+
+@media (max-width: 768px), (max-height: 500px) {
+    .border-overlay {
+        border: 50px solid var(--marie-black);
+        border-radius: 100px;
+        max-width: 1150px;
+        top: -25px;
+        left: -25px;
+        right: -25px;
+        bottom: -25px;
+    }
+}
+
+.border-bar {
+    z-index: 10;
+    background-color: var(--marie-black);
+    position: fixed;
+    pointer-events: none;
+    height: 20px;
+    width: 100%;
+}
+
+.top-bar {
+    top: 0;
+}
+
+.bottom-bar {
+    bottom: 0;
+}

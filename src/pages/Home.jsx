@@ -3,6 +3,7 @@ import MenuButton from "../components/MenuButton";
 import SocialCard from "../components/SocialCard";
 import { useEffect, useRef, useState } from "react";
 import AudioPlayer from "../components/AudioPlayer";
+import TvBorder from "../components/TvBorder";
 
 function Home() {
     const [hasEntered, setHasEntered] = useState(false);
@@ -60,7 +61,6 @@ function Home() {
 
     const startEntering = () => {
         landingImg.current.style.opacity = "0";
-        //landingImg.current.style.transform = "translate(-50%, -50%) scale(1.5)";
         enterTextRef.current.style.opacity = "0";
         window.removeEventListener('click', startEntering)
         setTimeout(() => {
@@ -104,32 +104,15 @@ function Home() {
         return <div className="empty"></div>
     };
 
-    const border = () => {
-        return <>
-            <div className="border-overlay" ></div>
-            <div className="border-bar top-bar"></div>
-            <div className="border-bar bottom-bar"></div>
-
-        </>
-    };
-
-    const mainImage = () => {
-        return <img className="bg-img" ref={bgImg} src={"../OliviaWendel.webp"}></img>;
-    };
-
-    const landingImage = () => {
-        return <img className="landing-img" ref={landingImg} src={"../OliviaWendel-Alt.webp"}></img>;
-    };
-
     return (
         <> 
             <AudioPlayer ref={audioRef}/>
 
-            {border()}
+            <TvBorder />
             
             <div className="page-content">
-                {mainImage()}
-                {landingImage()}
+                <img className="bg-img" ref={bgImg} src={"../OliviaWendel.webp"}></img>
+                <img className="landing-img" ref={landingImg} src={"../OliviaWendel-Alt.webp"}></img>
                 <p className="enter-text" ref={enterTextRef}>Enter</p>
                 {hasEntered ? enteredJsx() : empty()}
             </div>
