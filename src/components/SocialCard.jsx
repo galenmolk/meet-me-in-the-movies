@@ -1,4 +1,4 @@
-import './social-card-style.css'
+import '../styles/social-card-style.css'
 import { Link } from 'react-router-dom';
 
 export default function SocialCard() {

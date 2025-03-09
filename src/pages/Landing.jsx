@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
-import TvBorder from "./TvBorder";
-import config from './Config';
+import config from '../data/Config.js';
 
 function Landing() {
     const randomSign = () => {

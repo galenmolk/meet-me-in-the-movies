@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
-import Home from './Home';
-import Landing from './Landing';
-import config from './Config';
+import Home from './pages/Home';
+import Landing from './pages/Landing';
+import config from './data/Config';
 
 function App() {
   const [hasEntered, setHasEntered] = useState(config.autoEnter); 

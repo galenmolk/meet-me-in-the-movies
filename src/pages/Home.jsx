@@ -1,6 +1,6 @@
-import buttons from "./Buttons";
-import MenuButton from "./MenuButton";
-import SocialCard from "./SocialCard";
+import buttons from "../data/Buttons";
+import MenuButton from "../components/MenuButton";
+import SocialCard from "../components/SocialCard";
 import { useEffect, useRef, useState } from "react";
 
 function Home() {
@@ -11,7 +11,6 @@ function Home() {
     const bgMusicRef = useRef(null);
     const enterTextRef = useRef(null);
     const enteredContentRef = useRef(null);
-
 
     let lastViewportWidth = window.innerWidth;
 
