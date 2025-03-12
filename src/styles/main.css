@@ -9,13 +9,13 @@
 
 @font-face {
     font-family: "AlfaSlabOne";
-    src: local("AlfaSlabOne"), url("./AlfaSlabOne.ttf") format("truetype");
+    src: local("AlfaSlabOne"), url("/fonts/AlfaSlabOne.ttf") format("truetype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Geologica";
-    src: local("Geologica"), url("./Geologica.ttf") format("truetype");
+    src: local("Geologica"), url("/fonts/Geologica.ttf") format("truetype");
     font-weight: normal;
 }
 
@@ -59,6 +59,7 @@ html {
     z-index: 2;
     position: relative;
     background-color: var(--marie-black);
+    overflow: hidden;
 }
 
 .home-content {

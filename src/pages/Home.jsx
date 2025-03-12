@@ -65,7 +65,7 @@ function Home() {
             setTimeout(() => {
                 homeContentRef.current.style.opacity = "1";
                 playMusic();
-            }, 1)
+            }, 100)
 
         }, config.enterDelayMs);
     };
@@ -92,10 +92,6 @@ function Home() {
             </div>
     };
 
-    const landingContent = () => {
-        return <Landing ref={landingRef} />
-    };
-
     return (
         <> 
             <TvBorder />
@@ -103,7 +99,7 @@ function Home() {
             <div className="page-content">
                 {hasEntered ? 
                 homeContent() : 
-                landingContent()}
+                <Landing ref={landingRef} />}
             </div>
         </>
     )
