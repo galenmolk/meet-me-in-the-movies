@@ -56,10 +56,13 @@ function Home() {
 
         setTimeout(() => {
             setHasEntered(true);
+
+            // Wait a MS until the JSX exists.
             setTimeout(() => {
                 homeContentRef.current.style.opacity = "1";
+                playMusic();
             }, 1)
-            playMusic();
+
         }, config.enterDelayMs);
     };
 
