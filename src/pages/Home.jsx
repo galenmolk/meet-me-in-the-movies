@@ -1,9 +1,10 @@
+import { useEffect, useRef, useState } from "react";
 import buttons from "../data/Buttons";
 import MenuButton from "../components/MenuButton";
 import SocialCard from "../components/SocialCard";
 import AudioPlayer from "../components/AudioPlayer";
 import TvBorder from "../components/TvBorder";
-import { useEffect, useRef, useState } from "react";
+import Landing from "../components/Landing";
 
 function Home() {
     const [hasEntered, setHasEntered] = useState(false);
@@ -54,8 +55,6 @@ function Home() {
         return () => {
             window.removeEventListener('resize', attemptResize);
             window.removeEventListener('click', startEntering);
-            window.removeEventListener('blur', pauseMusic);
-            window.removeEventListener('focus', playMusic);
         };
     }, []);
 
@@ -66,8 +65,6 @@ function Home() {
         setTimeout(() => {
             bgImg.current.classList.add('loaded');
             playMusic();
-            window.addEventListener('blur', pauseMusic);
-            window.addEventListener('focus', playMusic);    
             setHasEntered(true);
         }, 1000);
     };
@@ -86,6 +83,8 @@ function Home() {
 
     const enteredJsx = () => {
         return <div className="entered-content" ref={enteredContentRef}>
+                <AudioPlayer ref={audioRef}/>
+
                 <div className="container-fluid hero-container fade-in" >
                     <img className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
                 </div>
@@ -99,21 +98,17 @@ function Home() {
             </div>
     };
 
-    const empty = () => {
-        return <div className="empty"></div>
-    };
-
     return (
         <> 
-            <AudioPlayer ref={audioRef}/>
-
             <TvBorder />
             
             <div className="page-content">
                 <img className="bg-img" ref={bgImg} src={"./OW-BW.webp"}></img>
                 <img className="landing-img" ref={landingImg} src={"./OW-Collage.webp"}></img>
                 <p className="enter-text" ref={enterTextRef}>Enter</p>
-                {hasEntered ? enteredJsx() : empty()}
+                {hasEntered ? 
+                enteredJsx() : 
+                <Landing />}
             </div>
         </>
     )

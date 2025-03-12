@@ -1,20 +1,38 @@
-import { useRef, forwardRef, useImperativeHandle } from "react";
+import { useRef, useEffect, forwardRef, useImperativeHandle } from "react";
 
 const AudioPlayer = forwardRef((props, ref) => {
     const bgMusicRef = useRef(null);
 
+    const playMusic = () => {
+        if (bgMusicRef.current) {
+            bgMusicRef.current.play();
+        }
+    };
+
+    const pauseMusic = () => {
+        if (bgMusicRef.current) {
+            bgMusicRef.current.pause();
+        }
+    };
+
     useImperativeHandle(ref, () => ({
         play() {
-            if (bgMusicRef.current) {
-                bgMusicRef.current.play();
-            }
+            playMusic();
         },
         pause() {
-            if (bgMusicRef.current) {
-                bgMusicRef.current.pause();
-            }
+            pauseMusic();
         }
     }));
+
+    useEffect(() => {
+        window.addEventListener('blur', pauseMusic);
+        window.addEventListener('focus', playMusic); 
+
+        return () => {
+            window.removeEventListener('blur', pauseMusic);
+            window.removeEventListener('focus', playMusic); 
+        };
+    }, []);
 
     return (
         <>
