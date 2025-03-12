@@ -13,41 +13,10 @@ function Home() {
     const landingRef = useRef(null);
     const homeContentRef = useRef(null);
 
-    let lastViewportWidth = window.innerWidth;
-
-    const handleResize = () => {
-        if (!hasEntered) {
-            return;
-        }
-
-        const currentWidth = window.innerWidth;
-
-        if (currentWidth !== lastViewportWidth) {
-            if (window.innerWidth > 860) {
-                document.documentElement.scrollTop = 0;
-            } else {
-                document.documentElement.style.overflowY = "scroll";
-            }
-        }
-
-        lastViewportWidth = currentWidth;
-    };
-
-    let resizeTimeout;
-    const attemptResize = () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(handleResize, 100);
-    };
-
     useEffect(() => {
-        document.documentElement.scrollTop = 0;
-        document.documentElement.style.overflowY = "hidden";
-
-        window.addEventListener('resize', attemptResize);
         window.addEventListener('click', startEntering)
 
         return () => {
-            window.removeEventListener('resize', attemptResize);
             window.removeEventListener('click', startEntering);
         };
     }, []);
@@ -76,8 +45,14 @@ function Home() {
         }
     };
 
+    const toggleMusic = () => {
+        if (audioRef.current) {
+            audioRef.current.toggle();
+        }
+    };
+
     const homeContent = () => {
-        return <div className="home-content" ref={homeContentRef}>
+        return <div onClick={toggleMusic} className="home-content" ref={homeContentRef}>
                 <img className="bg-img" src={"./OW-BW.webp"}></img>
 
                 <AudioPlayer ref={audioRef}/>

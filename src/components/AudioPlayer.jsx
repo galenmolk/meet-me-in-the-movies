@@ -21,6 +21,17 @@ const AudioPlayer = forwardRef((props, ref) => {
         },
         pause() {
             pauseMusic();
+        },
+        toggle() {
+            if (!bgMusicRef.current) {
+                return;
+            }
+
+            if (bgMusicRef.current.paused) {
+                bgMusicRef.play();
+            } else {
+                bgMusicRef.pause();
+            }
         }
     }));
 
