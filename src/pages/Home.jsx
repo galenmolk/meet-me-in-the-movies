@@ -1,19 +1,16 @@
 import { useEffect, useRef, useState } from "react";
-import buttons from "../data/Buttons";
-import MenuButton from "../components/MenuButton";
 import SocialCard from "../components/SocialCard";
 import AudioPlayer from "../components/AudioPlayer";
 import TvBorder from "../components/TvBorder";
 import Landing from "../components/Landing";
+import Menu from '../components/Menu'
 
 function Home() {
     const [hasEntered, setHasEntered] = useState(false);
 
     const audioRef = useRef(null);
     const bgImg = useRef(null);
-    const landingImg = useRef(null);
-    const enterTextRef = useRef(null);
-    const enteredContentRef = useRef(null);
+    const homeContentRef = useRef(null);
 
     let lastViewportWidth = window.innerWidth;
 
@@ -42,13 +39,6 @@ function Home() {
     };
 
     useEffect(() => {
-        document.documentElement.style.overflowY = "hidden";
-
-        setTimeout(() => {
-            landingImg.current.style.opacity = "1";
-            enterTextRef.current.style.opacity = "1";
-        }, 750);
-
         window.addEventListener('resize', attemptResize);
         window.addEventListener('click', startEntering)
 
@@ -59,11 +49,8 @@ function Home() {
     }, []);
 
     const startEntering = () => {
-        landingImg.current.style.opacity = "0";
-        enterTextRef.current.style.opacity = "0";
         window.removeEventListener('click', startEntering)
         setTimeout(() => {
-            bgImg.current.classList.add('loaded');
             playMusic();
             setHasEntered(true);
         }, 1000);
@@ -75,25 +62,17 @@ function Home() {
         }
     };
 
-    const pauseMusic = () => {
-        if (audioRef.current) {
-            audioRef.current.pause();
-        }
-      };
-
-    const enteredJsx = () => {
-        return <div className="entered-content" ref={enteredContentRef}>
+    const homeContent = () => {
+        return <div className="home-content" ref={homeContentRef}>
                 <AudioPlayer ref={audioRef}/>
+                <img className="bg-img" ref={bgImg} src={"./OW-BW.webp"}></img>
 
-                <div className="container-fluid hero-container fade-in" >
+                <div className="container-fluid hero-container" >
                     <img className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
                 </div>
 
-                <div className="menu">
-                    {buttons.map((b, index) => {
-                        return <MenuButton button={b} key={index} />
-                    })}         
-                </div>
+
+                <Menu />
                 <SocialCard />
             </div>
     };
@@ -103,11 +82,8 @@ function Home() {
             <TvBorder />
             
             <div className="page-content">
-                <img className="bg-img" ref={bgImg} src={"./OW-BW.webp"}></img>
-                <img className="landing-img" ref={landingImg} src={"./OW-Collage.webp"}></img>
-                <p className="enter-text" ref={enterTextRef}>Enter</p>
                 {hasEntered ? 
-                enteredJsx() : 
+                homeContent() : 
                 <Landing />}
             </div>
         </>

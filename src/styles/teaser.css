@@ -6,6 +6,18 @@
     background-color: var(--marie-black);
 }
 
+@keyframes grow {
+    0% {
+        padding: 10px 15px 10px 15px;
+    }
+    50% {
+        padding: 13px 18px 13px 18px;
+    }
+    100% {
+        padding: 10px 15px 10px 15px;
+    }
+}
+
 .teaser-text {
     cursor: url('/cursor-hover.png') 22 0, auto;
     color: var(--marie-black);

@@ -31,18 +31,6 @@ html {
     overscroll-behavior: none;
 }
 
-@keyframes grow {
-    0% {
-        padding: 10px 15px 10px 15px;
-    }
-    50% {
-        padding: 13px 18px 13px 18px;
-    }
-    100% {
-        padding: 10px 15px 10px 15px;
-    }
-}
-
 .hero-container {
     transition: 0.5s;
     display: flex;
@@ -66,15 +54,6 @@ html {
     }
 }
 
-.menu {
-    margin: 15px auto 0 auto;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 40px;
-    max-width: 1100px;
-}
-
 @media (min-width: 861px) {
     html {
         overflow-y: hidden;
@@ -90,86 +69,6 @@ html {
 @media (max-width: 860px) {
     html {
         overflow-y: scroll;
-    }
-
-    .menu {
-      grid-template-columns: 1fr;
-      grid-gap: 40px
-    }
-}
-
-.menu-button {
-    cursor: url('/cursor-hover.png') 22 0, auto;
-    background-color: var(--marie-green);
-    width: 270px;
-    height: 144px;
-    margin: 0 auto;
-    border: 2px solid var(--marie-black);
-    border-radius: 3px;
-    box-shadow: 2px 2px 30px 2px var(--marie-green);
-    position: relative;
-    overflow: hidden;
-    transition: 0.35s;
-}
-
-.menu-button p {
-    cursor: url('/cursor-hover.png') 22 0, auto;
-    text-align: center;
-    position: relative;
-    top: 4%;
-    color: var(--marie-black);
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.menu-button:hover {
-    box-shadow: 2px 2px 60px 0px var(--marie-rose);
-}
-
-.menu-button:hover img {
-    height: 145px;
-    animation: none;
-}
-
-.menu-button img {
-    position: absolute;
-    cursor: url('/cursor-hover.png') 22 0, auto;
-    top: 50%;
-    left: 50%;
-    transform-origin: center center;
-    transform: translate(-50%, -50%);
-    height: 160px;
-    transition: 0.35s;
-    animation: shake 0.75s ease-in-out forwards 0s;
-}
-
-@keyframes shake {
-    0% { 
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    25% {
-      transform: translate(-50%, -50%) rotate(-3deg);
-    }
-    50% {
-     transform: translate(-50%, -50%) rotate(2deg);
-    }
-    75% {
-      transform: translate(-50%, -50%) rotate(-1deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-}
-
-
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
     }
 }
 
@@ -188,25 +87,9 @@ html {
     width: 1100px;
     max-width: none;
     pointer-events: none;
-    opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
-.landing-img {
-    position: absolute;
-    top: 32%;
-    left: 50%;
-    width: 1050px;
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
-    transition: opacity 1s ease-in-out,  transform 1s ease-in-out;
-}
-
-.loaded {
-    opacity: 1;
-}
-
-.entered-content {
-    opacity: 1;
+.home-content {
     transition: opacity 1s ease-in-out;
 }
