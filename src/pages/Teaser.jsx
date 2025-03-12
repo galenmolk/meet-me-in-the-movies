@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import '../styles/teaser.css'
 
-export default function Temp() {
+export default function Teaser() {
     return (
         <>
             <div className='teaser-container'>

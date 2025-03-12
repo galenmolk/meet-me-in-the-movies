@@ -9,15 +9,13 @@
 
 @font-face {
     font-family: "AlfaSlabOne";
-    src: local("AlfaSlabOne"),
-        url("./fonts/AlfaSlabOne.ttf") format("truetype");
+    src: local("AlfaSlabOne"), url("./fonts/AlfaSlabOne.ttf") format("truetype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Geologica";
-    src: local("Geologica"),
-        url("./fonts/Geologica.ttf") format("truetype");
+    src: local("Geologica"), url("./fonts/Geologica.ttf") format("truetype");
     font-weight: normal;
 }
 
@@ -31,29 +29,6 @@
 html {
     overflow-x: hidden;
     overscroll-behavior: none;
-}
-
-.teaser-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: var(--marie-black);
-}
-
-.teaser-text {
-    cursor: url('/cursor-hover.png') 22 0, auto;
-    color: var(--marie-black);
-    background-color: var(--marie-rose);
-    text-align: center;
-    margin: auto;
-    padding: 10px 15px 10px 15px;
-    font-size: 24px;
-    font-style: italic;
-    border: 1px solid var(--marie-black);
-    box-shadow: 2px 3px 7px var(--shadow);
-    border-radius: 100px;
-    animation: grow 2s ease-in-out forwards infinite;
 }
 
 @keyframes grow {
@@ -229,11 +204,6 @@ html {
 
 .loaded {
     opacity: 1;
-}
-
-.empty {
-    width: 1100px;
-    height: 1000px
 }
 
 .entered-content {
