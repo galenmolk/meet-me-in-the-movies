@@ -1,9 +1,15 @@
 import '../styles/landing.css'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import config from '../data/Config';
 
-const Landing = () => {
+const Landing = forwardRef((props, ref) => {
     const landingRef = useRef(null);
+
+    useImperativeHandle(ref, () => ({
+        hide() {
+            landingRef.current.style.opacity = "0";
+        }
+    }));
 
     useEffect(() => {
         setTimeout(() => {
@@ -15,6 +21,6 @@ const Landing = () => {
         <img className="landing-img" src={"./OW-Collage.webp"}></img>
         <p className="landing-text">Enter</p>
     </div>
-};
+});
 
 export default Landing;
