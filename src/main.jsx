@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App'
+import Home from './pages/Home'
 import Temp from './pages/Temp';
 import './styles/main.css';
 import './styles/enter-text.css'
@@ -18,7 +18,7 @@ const createSite = () => {
           {config.isPrototype ? (
             <Temp />
           ) : (
-            <App />
+            <Home />
           )}
         </BrowserRouter>
       </StrictMode> 
