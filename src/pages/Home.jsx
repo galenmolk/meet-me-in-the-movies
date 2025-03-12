@@ -40,6 +40,9 @@ function Home() {
     };
 
     useEffect(() => {
+        document.documentElement.scrollTop = 0;
+        document.documentElement.style.overflowY = "hidden";
+
         window.addEventListener('resize', attemptResize);
         window.addEventListener('click', startEntering)
 
@@ -56,6 +59,7 @@ function Home() {
 
         setTimeout(() => {
             setHasEntered(true);
+            document.documentElement.style.overflowY = "scroll";
 
             // Wait a MS until the JSX exists.
             setTimeout(() => {
@@ -74,8 +78,9 @@ function Home() {
 
     const homeContent = () => {
         return <div className="home-content" ref={homeContentRef}>
-                <AudioPlayer ref={audioRef}/>
                 <img className="bg-img" src={"./OW-BW.webp"}></img>
+
+                <AudioPlayer ref={audioRef}/>
 
                 <div className="container-fluid hero-container" >
                     <img className="name-img" src='./name-white.png' alt='Olivia Wendel'></img>
@@ -83,6 +88,7 @@ function Home() {
 
                 <Menu />
                 <SocialCard />
+
             </div>
     };
 

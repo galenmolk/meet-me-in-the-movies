@@ -1,7 +1,7 @@
 .social-card {
     text-align: center;
     align-content: center;
-    margin-top: 15px;
+    margin-top: 45px;
     margin-bottom: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -9,6 +9,8 @@
     height: 50px;
     transition: 0.4s;
     border-radius: 10px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
 .social-card:hover {
