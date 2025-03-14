@@ -14,6 +14,8 @@ function Home() {
     const homeContentRef = useRef(null);
 
     useEffect(() => {
+        document.documentElement.scrollTop = 0;
+
         window.addEventListener('click', startEntering)
 
         return () => {
