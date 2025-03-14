@@ -45,5 +45,4 @@
 .social-card:hover p {
     text-decoration: underline;
     color: var(--marie-rose);
-    font-size: 26px;
 }

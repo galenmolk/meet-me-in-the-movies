@@ -12,7 +12,7 @@ function MenuButton({button}) {
 
     return (
         <Link ref={buttonRef} className="menu-button fade-in" to={button.url} target={"_blank"} >
-            <img loading='lazy' src={button.imgSrc} alt={button.alt}></img>
+            <img src={button.imgSrc} alt={button.alt}></img>
         </Link>
     );
 }
