@@ -26,6 +26,8 @@
     position: relative;
     overflow: hidden;
     transition: 0.35s;
+    opacity: 0;
+    text-decoration: none;
 }
 
 .menu-button p {
@@ -41,7 +43,6 @@
 .menu-button:hover {
     box-shadow: 2px 2px 60px 0px var(--marie-rose);
 }
-
 
 .menu-button:hover img {
     height: 145px;
