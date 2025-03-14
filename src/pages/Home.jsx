@@ -4,7 +4,7 @@ import AudioPlayer from "../components/AudioPlayer";
 import TvBorder from "../components/TvBorder";
 import Landing from "../components/Landing";
 import Menu from '../components/Menu'
-import config from '../data/config'
+import config from '../data/Config'
 
 function Home() {
     const [hasEntered, setHasEntered] = useState(false);
@@ -28,9 +28,8 @@ function Home() {
 
         setTimeout(() => {
             setHasEntered(true);
-            document.documentElement.style.overflowY = "scroll";
 
-            // Wait a MS until the JSX exists.
+            // Wait 100 MS until the JSX exists.
             setTimeout(() => {
                 homeContentRef.current.style.opacity = "1";
                 playMusic();
