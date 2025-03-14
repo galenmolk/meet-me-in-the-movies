@@ -7,7 +7,7 @@ function MenuButton({button}) {
     useEffect(() => {
         setTimeout(() => {
             buttonRef.current.style.opacity = "1";
-        }, button.delay * 1000);
+        }, button.delay);
     }, []);
 
     return (

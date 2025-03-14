@@ -5,7 +5,7 @@ const buttons = [
     imgSrc: "./presave.png", 
     alt: "Olivia Wendel Music Presave", 
     height: "115",
-    delay: "0.5"
+    delay: 400
   },
   { 
     title: "watch", 
@@ -13,7 +13,7 @@ const buttons = [
     imgSrc: "./watch.png", 
     alt: "Olivia Wendel Music Watch", 
     height: "115",
-    delay: "0.6"
+    delay: 500
   },
   { 
     title: "listen", 
@@ -21,7 +21,7 @@ const buttons = [
     imgSrc:"./listen.png",  
     alt: "Olivia Wendel on Spotify Music", 
     height: "115",
-    delay: "0.7"
+    delay: 600
   },
   { 
     title: "follow", 
@@ -29,7 +29,7 @@ const buttons = [
     imgSrc: "./follow.png", 
     alt: "Olivia Wendel Music Follow", 
     height: "115",
-    delay: "0.8"
+    delay: 700
   },
   { 
     title: "outtakes", 
@@ -37,7 +37,7 @@ const buttons = [
     imgSrc:"./outtakes.png", 
     alt: "Olivia Wendel Music Outtakes Video", 
     height: "115",
-    delay: "0.9"
+    delay: 800
   },
   { 
     title: "merch", 
@@ -45,7 +45,7 @@ const buttons = [
     imgSrc: "./merch.png", 
     alt: "Olivia Wendel Music Merch", 
     height: "115",
-    delay: "1"
+    delay: 900
   },
 ];
 
